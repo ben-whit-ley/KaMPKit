@@ -6,6 +6,7 @@ plugins {
     kotlin("plugin.serialization")
     id("com.android.library")
     id("com.squareup.sqldelight")
+    id("co.touchlab.faktory.kmmbridge") version "0.1.18-SNAPSHOT"
 }
 
 android {
@@ -107,4 +108,12 @@ sqldelight {
     database("KaMPKitDb") {
         packageName = "co.touchlab.kampkit.db"
     }
+}
+
+kmmbridge {
+    githubReleaseArtifacts()
+    githubReleaseVersions()
+    spm("..")
+    // cocoapods("git@github.com:touchlab/PodSpecs.git")
+    versionPrefix.set("0.3")
 }
