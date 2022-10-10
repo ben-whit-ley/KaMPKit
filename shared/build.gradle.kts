@@ -6,7 +6,7 @@ plugins {
     kotlin("plugin.serialization")
     id("com.android.library")
     id("com.squareup.sqldelight")
-    id("co.touchlab.faktory.kmmbridge") version "0.1.18-SNAPSHOT"
+    id("co.touchlab.faktory.kmmbridge") version "0.2.2"
 }
 
 android {
@@ -113,7 +113,6 @@ sqldelight {
 kmmbridge {
     githubReleaseArtifacts()
     githubReleaseVersions()
-    spm("..")
-    // cocoapods("git@github.com:touchlab/PodSpecs.git")
+    cocoapods("git@github.com:ben-whit-ley/KMM-Bridge-Podspec.git")
     versionPrefix.set("0.1")
 }
